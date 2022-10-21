@@ -43,6 +43,17 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const raw = localStorage.getItem("data");
+    this.setState({
+      data: JSON.parse(raw),
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("data", JSON.stringify(this.state.data));
+  }
+
   addEmploee = (name, salary) => {
     const newItem = {
       name,
