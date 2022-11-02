@@ -6,7 +6,7 @@ import EmployeesAddForm from "../employees-add-form/employees-add-form";
 import EmployeesList from "../employees-list/employees-list";
 import SearchPanel from "../search-panel/search-panel";
 
-import { newID } from "../newID/newID";
+import { v4 as uuidv4 } from 'uuid';
 
 import "./app.scss";
 
@@ -44,10 +44,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const raw = localStorage.getItem("data");
-    this.setState({
+    const raw = localStorage.getItem("data") || [];
+    if(typeof raw === "string"){
+      this.setState({
       data: JSON.parse(raw),
     });
+    }
   }
 
   componentDidUpdate() {
@@ -60,7 +62,7 @@ class App extends Component {
       salary,
       increase: false,
       promotion: false,
-      id: newID(),
+      id: uuidv4().slice(0,8),
     };
     this.setState(({ data }) => ({
       data: [...data, newItem],
