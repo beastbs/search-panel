@@ -1,17 +1,15 @@
 # Search panel
 
-### Follow link to try it - https://fir-pro-a0714.firebaseapp.com
-
 ### Functionality:
 
-   * addition new emploees 
-   * deletion of emploees
-   * saving to local storage
-   * clearing from local storage
-   * clearing input after additional emploees
-   * prevention of creating empty field
-   * counting emploees
-   * filter by name
+- addition new emploees
+- deletion of emploees
+- saving to local storage
+- clearing from local storage
+- clearing input after additional emploees
+- prevention of creating empty field
+- counting emploees
+- filter by name
 
 > Screenshots:
 
